@@ -1,14 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-
-
 const initialState = {};
-
-
-
-
-
 
 
 const someSlice = createSlice({

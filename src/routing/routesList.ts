@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import HomePage from "../modules/Home/pages/HomePage";
 import LoginPage from "../modules/Login/pages/LoginPage";
 
 
@@ -11,6 +12,13 @@ export const routesList = [
     title: 'home',
     authRequired: false
   },
+  {
+    path: '/',
+    Component: HomePage,
+    title: '',
+    authRequired: false
+  },
+
   {
     path: '/login',
     Component: LoginPage,

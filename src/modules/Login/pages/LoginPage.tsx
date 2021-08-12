@@ -1,10 +1,18 @@
 import { Form, Input, Button, Checkbox } from 'antd';
-import 'antd/dist/antd.css';
 
 function LoginPage() {
   return (
-    <div className="App" style={{ width: 400, margin: "auto", height: '100vh' }}>
+    <div className="App" style={{ width: 300, margin: "auto", height: '100vh', marginTop: '20px' }}>
       <Form className="login-form">
+
+        <Form.Item>
+
+          <Input
+
+            placeholder="WarehouseID"
+          />
+        </Form.Item>
+
         <Form.Item>
 
           <Input
@@ -26,8 +34,8 @@ function LoginPage() {
             </a>
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Log in
+            <Button type="primary" shape="round" htmlType="submit" className="login-form-button">
+              Zaloguj się
             </Button>
           </Form.Item>
         </Form.Item>
