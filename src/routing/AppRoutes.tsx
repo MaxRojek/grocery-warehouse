@@ -7,7 +7,7 @@ import { routesList } from "./routesList";
 
 interface AppProps { }
 
-export const AppRoutes: FC<AppProps> = (): JSX.Element => {
+export const AppRoutes: FC<AppProps> = () => {
 
   return (
     <>
@@ -18,6 +18,7 @@ export const AppRoutes: FC<AppProps> = (): JSX.Element => {
               {routesList.map((route) => (
                 <CustomRoute key={route.path}  {...route} />
               ))}
+
             </Switch>
           </Suspense>
         </BrowserRouter>
