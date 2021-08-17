@@ -1,24 +1,19 @@
 import { lazy } from "react";
-import HomePage from "../modules/Home/pages/HomePage";
-import LoginPage from "../modules/Login/pages/LoginPage";
 
 
+const HomePage = lazy(() => import("../modules/Home/pages/HomePage"));
 const defaultPage = lazy(() => import("../modules/DefaultPage/DefaultPage"));
+const LoginPage = lazy(() => import("../modules/Login/pages/LoginPage"));
+
 
 export const routesList = [
+
   {
     path: '/home',
-    Component: defaultPage,
+    Component: HomePage,
     title: 'home',
     authRequired: false
   },
-  {
-    path: '/',
-    Component: HomePage,
-    title: '',
-    authRequired: false
-  },
-
   {
     path: '/login',
     Component: LoginPage,
@@ -26,27 +21,19 @@ export const routesList = [
     authRequired: false
   },
   {
-    path: '/orders',
+    path: '/register',
     Component: defaultPage,
-    title: 'Orders',
-    authRequired: true,
-    routes: [
-      {
-        path: '/orders/basket',
-        Component: defaultPage,
-        title: 'Orders',
-        authRequired: true,
-      },
-      {
-        path: '/orders/edit',
-        Component: defaultPage,
-        title: 'Orders',
-        authRequired: true,
-      }
-    ]
-  }
+    title: 'register',
+    authRequired: false
+  },
+  {
+    path: '/',
+    Component: HomePage,
+    title: 'home',
+    authRequired: false
+  },
 ];
-
+// '/' means default route and should always be at the end
 
 
 

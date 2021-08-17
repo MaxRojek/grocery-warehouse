@@ -3,6 +3,9 @@ import { MyGlobalContext, GlobalContextConsumer, GlobalContextProvider, GlobalCo
 import { Route, BrowserRouter, Switch, Redirect } from "react-router-dom";
 import { CustomRoute } from "./CustomRoute";
 import { routesList } from "./routesList";
+import { LoadingSpinner } from "../core/components/LoadingSpinner/LoadingSpinner"
+import LoginPage from "../modules/Login/pages/LoginPage";
+
 
 
 interface AppProps { }
@@ -12,16 +15,15 @@ export const AppRoutes: FC<AppProps> = () => {
   return (
     <>
       <GlobalContextProvider value={GlobalContextValues}>
-        <BrowserRouter>
-          <Suspense fallback={<>Loading...</>}>
+        <Suspense fallback={<>loading...</>}>
+          <BrowserRouter>
             <Switch>
               {routesList.map((route) => (
                 <CustomRoute key={route.path}  {...route} />
               ))}
-
             </Switch>
-          </Suspense>
-        </BrowserRouter>
+          </BrowserRouter>
+        </Suspense>
       </GlobalContextProvider>
     </>
   );

@@ -9,7 +9,7 @@ export const CustomRoute = (route: routes) => {
     <Route
       path={path}
       render={(props) =>
-        authRequired ? <Redirect to={"./home"} /> : <Component />
+        <Component />
       }
     />
   );

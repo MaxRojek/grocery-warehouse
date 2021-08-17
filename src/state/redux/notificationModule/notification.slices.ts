@@ -1,35 +1,65 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { notification } from "antd";
 
-const initialState = { notification: [] };
+export type notificationObject = {
+  type: string,
+  message: string
+}
+
+export interface notificationSliceState {
+  notifications: notificationObject[];
+}
+
+const initialState: notificationSliceState = { notifications: [] };
 
 
 const notificationsSlice = createSlice({
   name: "notificationsSlice",
   initialState: initialState,
   reducers: {
-    appActionError: (state, { payload }) => {
-      const alertObj = { type: 'Error', payload: payload };
-      return {
-        ...state,
-        alertObj
-      };
+    appActionError: (state, action) => {
+      const notificationMessage = action.payload
+
+      state.notifications.push({
+        message: notificationMessage.message,
+        type: 'error'
+      });
+      notification.error({
+        message: 'error',
+        description:
+          notificationMessage.message,
+      });
+
     },
 
-    appActionSuccess: (state, { payload }) => {
-      const alertObj = { type: 'success', payload: payload };
-      return {
-        ...state,
-        alertObj
-      };
+    appActionSuccess: (state, action) => {
+      const notificationMessage = action.payload
+
+      state.notifications.push({
+        message: notificationMessage.message,
+        type: 'error'
+      });
+      notification.success({
+        message: 'success',
+        description:
+          notificationMessage.message,
+      });
     },
 
-    appActionWarning: (state, { payload }) => {
-      const alertObj = { type: 'warning', payload: payload };
-      return {
-        ...state,
-        alertObj
-      };
-    }
+    appActionWarning: (state, action) => {
+      const notificationMessage = action.payload
+
+      state.notifications.push({
+        message: notificationMessage.message,
+        type: 'warning'
+      });
+      notification.warning({
+        message: 'warning',
+        description:
+          notificationMessage.message,
+      });
+    },
+
   }
 });
 
@@ -38,5 +68,6 @@ export const {
   appActionSuccess,
   appActionWarning
 } = notificationsSlice.actions;
+
 const notificationSlice = notificationsSlice.reducer;
 export default notificationSlice;
