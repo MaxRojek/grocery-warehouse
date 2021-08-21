@@ -18,8 +18,7 @@ const notificationsSlice = createSlice({
   initialState: initialState,
   reducers: {
     appActionError: (state, action) => {
-      const notificationMessage = action.payload
-
+      const notificationMessage = action.payload;
       state.notifications.push({
         message: notificationMessage.message,
         type: 'error'
@@ -27,7 +26,7 @@ const notificationsSlice = createSlice({
       notification.error({
         message: 'error',
         description:
-          notificationMessage.message,
+          notificationMessage.payload,
       });
 
     },
@@ -37,7 +36,7 @@ const notificationsSlice = createSlice({
 
       state.notifications.push({
         message: notificationMessage.message,
-        type: 'error'
+        type: 'success'
       });
       notification.success({
         message: 'success',

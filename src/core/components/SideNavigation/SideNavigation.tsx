@@ -22,7 +22,10 @@ const SideNavigation = () => {
 
   return (
 
-    <Sider theme={'light'} collapsible collapsed={collapse} onCollapse={onCollapse}>
+    <Sider style={{
+      height: "100vh", position: 'sticky', overflow: "auto", top: 0,
+      left: 0
+    }} theme={'light'} collapsible collapsed={collapse} onCollapse={onCollapse}>
 
       <Menu mode="inline">
 

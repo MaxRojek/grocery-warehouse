@@ -21,6 +21,8 @@
     "axios": "^0.21.1",
     "craco-less": "^1.18.0",
     "dotenv": "^10.0.0",
+    "jspdf": "^2.3.1",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.12.2",

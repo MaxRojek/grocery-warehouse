@@ -41,11 +41,13 @@ import { loginContext } from "./loginContext/login.reducer";
 
 
 export const MyGlobalContext = createContext({
-  login: loginContext.initialCounterState
+  login: loginContext.initialCounterState,
+  isMobile: false
 });
 
 export const GlobalContextValues = {
-  login: loginContext.initialCounterState
+  login: loginContext.initialCounterState,
+  isMobile: false
 }
 
 export const useGlobalContext = () => useContext(MyGlobalContext);

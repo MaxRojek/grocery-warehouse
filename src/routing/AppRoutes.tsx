@@ -5,6 +5,7 @@ import { CustomRoute } from "./CustomRoute";
 import { routesList } from "./routesList";
 import { LoadingSpinner } from "../core/components/LoadingSpinner/LoadingSpinner"
 import LoginPage from "../modules/Login/pages/LoginPage";
+import { AppStateProvider } from "../state/contexts/appStateProvider";
 
 
 
@@ -14,7 +15,7 @@ export const AppRoutes: FC<AppProps> = () => {
 
   return (
     <>
-      <GlobalContextProvider value={GlobalContextValues}>
+      <AppStateProvider >
         <Suspense fallback={<>loading...</>}>
           <BrowserRouter>
             <Switch>
@@ -24,7 +25,7 @@ export const AppRoutes: FC<AppProps> = () => {
             </Switch>
           </BrowserRouter>
         </Suspense>
-      </GlobalContextProvider>
+      </AppStateProvider>
     </>
   );
 };
