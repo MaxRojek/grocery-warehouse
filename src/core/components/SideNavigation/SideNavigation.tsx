@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   DesktopOutlined,

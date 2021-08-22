@@ -34,7 +34,7 @@ function LoginPage() {
             </a>
           </Form.Item>
           <Form.Item>
-            <Button type="primary" shape="round" htmlType="submit" className="login-form-button">
+            <Button type="primary" shape="round" htmlType="submit" >
               Zaloguj się
             </Button>
           </Form.Item>

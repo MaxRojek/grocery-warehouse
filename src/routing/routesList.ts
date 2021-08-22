@@ -7,12 +7,11 @@ const LoginPage = lazy(() => import("../modules/Login/pages/LoginPage"));
 
 
 export const routesList = [
-
   {
     path: '/home',
     Component: HomePage,
     title: 'home',
-    authRequired: false
+    authRequired: true
   },
   {
     path: '/login',
@@ -30,9 +29,22 @@ export const routesList = [
     path: '/',
     Component: HomePage,
     title: 'home',
-    authRequired: false
+    authRequired: true
   },
 ];
+
+
+
+export const getPublicRoutes = () => {
+  return routesList.filter((route) => { return route.authRequired === false });
+
+}
+
+export const getProtectedRoutes = () => {
+  return routesList.filter((route) => { return route.authRequired === true })
+}
+
+
 // '/' means default route and should always be at the end
 
 
