@@ -7,6 +7,8 @@ import {
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import { loginAction } from '../../../state/redux/authModule/auth.actions';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -18,6 +20,12 @@ const SideNavigation = () => {
   const onCollapse = () => {
     setCollapse(!collapse)
   };
+
+  const dispatch = useDispatch();
+
+  const loginFunc = () => {
+    dispatch(loginAction())
+  }
 
   return (
 
@@ -35,7 +43,7 @@ const SideNavigation = () => {
           Option 2
         </Menu.Item>
         <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-          <Menu.Item key="3">Tom</Menu.Item>
+          <Menu.Item key="3"><button onClick={loginFunc}>login</button></Menu.Item>
 
         </SubMenu>
 

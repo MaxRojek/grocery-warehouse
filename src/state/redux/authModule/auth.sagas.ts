@@ -1,7 +1,7 @@
-import { all, put, takeEvery, delay, call } from "redux-saga/effects";
+import { all, put, takeEvery, delay, call, takeLatest } from "redux-saga/effects";
 import { actionRequested, actionFinished, actionFailed } from "./auth.slices";
 import { loginAction } from "./auth.actions";
-import axios from "axios";
+import { login } from './auth.apiService'
 //import { TuserDataFromFrom, TupdUserData } from "../typings/typings";
 
 
@@ -9,10 +9,15 @@ import axios from "axios";
 // const fetchData = (argUserData: TupdUserData) => async <T>(): Promise<T> =>
 //   axios.post("https://conduit.productionready.io/api/users/login", argUserData);
 
+export const authSagasFactory = () => [
+  watchFunc()
+];
 
 
-function* workFunc(argUserData: { type?: string; payload: any }) {
+function* loginEffect(argUserData: { type?: string; payload: any }) {
   console.log("argUserData", argUserData);
+  const respond = login();
+  console.log(respond);
   // yield delay(1000);
   // yield put(actionRequested("loading"));
   // yield;
@@ -34,10 +39,9 @@ function* workFunc(argUserData: { type?: string; payload: any }) {
 }
 
 function* watchFunc() {
-  // here is error
-  yield takeEvery(loginAction.type, workFunc);
+  yield takeLatest(loginAction.type, loginEffect);
 }
 
-export default function* authSaga() {
-  yield all([watchFunc()]);
-}
+// export default function* authSaga() {
+//   yield all([watchFunc()]);
+// }

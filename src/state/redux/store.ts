@@ -4,9 +4,9 @@ import {
 } from "@reduxjs/toolkit";
 import someSlice from "./authModule/auth.slices";
 import notificationSlice from "./notificationModule/notification.slices";
-
 import createSaga from "redux-saga";
-import rootSaga from "./authModule/auth.sagas";
+import { rootSaga } from "./root-sagas";
+
 
 const rootReducer = combineReducers({
   someSlice,

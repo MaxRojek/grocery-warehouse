@@ -19,7 +19,6 @@ export const AppStateProvider: FC<AppStateProvider> = ({ children }) => {
 
   const updateIfMobile = () => {
     const ifMobile = window.innerWidth < 768 ? true : false;
-
     setIsMobileLocal(ifMobile);
   };
 
@@ -27,7 +26,6 @@ export const AppStateProvider: FC<AppStateProvider> = ({ children }) => {
     updateIfMobile();
     window.addEventListener("resize", updateIfMobile);
   }, [isMobileLocal]);
-
 
   return (
     <GlobalContextProvider value={{ login: state, isMobile: isMobileLocal }}>

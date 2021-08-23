@@ -8,8 +8,6 @@ import LoginPage from "../modules/Login/pages/LoginPage";
 import { AppStateProvider } from "../state/contexts/appStateProvider";
 import PageWrapper from "../core/components/PageWrapper/PageWrapper";
 
-
-
 interface AppProps { }
 
 export const AppRoutes: FC<AppProps> = () => {

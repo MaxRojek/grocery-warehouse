@@ -1,20 +1,15 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 
-function LoginPage() {
+const LoginPage = () => {
   return (
     <div className="App" style={{ width: 300, margin: "auto", height: '100vh', marginTop: '20px' }}>
       <Form className="login-form">
-
         <Form.Item>
-
           <Input
-
             placeholder="WarehouseID"
           />
         </Form.Item>
-
         <Form.Item>
-
           <Input
 
             placeholder="Username"
