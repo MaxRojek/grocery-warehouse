@@ -1,41 +1,27 @@
-import { Form, Input, Button, Checkbox } from 'antd';
+import { useForm } from "react-hook-form";
+import { login } from "../../../models/Login/login.interface";
+import { LoginFormDef } from "../components/LoginForm/login-form-schema";
+import LoginForm from "../components/LoginForm/LoginForm";
+import { LoginPageLeftWrapper, LoginPageRightWrapper, LoginPageWrapper } from "./LoginPageStyle";
 
 const LoginPage = () => {
-  return (
-    <div className="App" style={{ width: 300, margin: "auto", height: '100vh', marginTop: '20px' }}>
-      <Form className="login-form">
-        <Form.Item>
-          <Input
-            placeholder="WarehouseID"
-          />
-        </Form.Item>
-        <Form.Item>
-          <Input
 
-            placeholder="Username"
-          />
-        </Form.Item>
-        <Form.Item>
-          <Input
-            type="password"
-            placeholder="Password"
-          />
-        </Form.Item>
-        <Form.Item>
-          <Form.Item>
-            <Checkbox>Remember me</Checkbox>
-            <a className="login-form-forgot" href="">
-              Forgot password
-            </a>
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" shape="round" htmlType="submit" >
-              Zaloguj się
-            </Button>
-          </Form.Item>
-        </Form.Item>
-      </Form>
-    </div>
+  const formMethods = useForm<LoginFormDef>({
+    mode: 'onChange',
+    // defaultValues: { username: "asd", password: "asd" }
+  });
+
+  const { handleSubmit } = formMethods;
+
+
+  const submit = (formObj: login) => { console.log(formObj) }
+
+  return (
+    <LoginPageWrapper>
+      <LoginPageLeftWrapper></LoginPageLeftWrapper>
+      <LoginPageRightWrapper> <LoginForm submitFunc={handleSubmit(submit)} formMethods={formMethods} />
+      </LoginPageRightWrapper>
+    </LoginPageWrapper>
 
   );
 }

@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { Card, Col, Drawer, Layout, Menu, notification, Row } from "antd";
-import { Form, Input, Button, Checkbox } from 'antd';
 import SideNavigation from "../SideNavigation/SideNavigation";
 import { MyGlobalContext } from "../../../state/contexts/contexts";
 import { NavBar } from "../NavBar/NavBar";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 
 interface PageWrapperProps {
   children?: React.ReactNode;
