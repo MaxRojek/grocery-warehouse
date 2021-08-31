@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import img from '../../../assets/cakephoto.jpg';
 export const LoginPageWrapper = styled.div`
   display:flex;
   flex-direction: row;
@@ -11,10 +11,13 @@ export const LoginPageWrapper = styled.div`
 export const LoginPageLeftWrapper = styled.div`
   display:flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
   width: 50%;
   height: 100%;
   padding: 20px;
-  background-color: orange;
+  background-image: url(${img});
   border-radius: 10px;
   @media (max-width: 768px) {
   width: 0%;

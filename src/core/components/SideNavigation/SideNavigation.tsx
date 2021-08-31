@@ -43,8 +43,10 @@ const SideNavigation = () => {
           Option 2
         </Menu.Item>
         <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-          <Menu.Item key="3"><button onClick={loginFunc}>login</button></Menu.Item>
-
+          {/* <Menu.Item key="3"><button onClick={loginFunc}>login</button></Menu.Item> */}
+          <Menu.Item key="1" icon={<PieChartOutlined />}>
+            Option 1
+          </Menu.Item>
         </SubMenu>
 
         <Menu.Item key="9" icon={<FileOutlined />}>

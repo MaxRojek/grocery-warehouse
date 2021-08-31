@@ -8,7 +8,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <Button className="barsMenu" type="primary" onClick={() => setShowDrawer(!showDrawer)}>
+      <Button className="barsMenu" onClick={() => setShowDrawer(!showDrawer)}>
         <MenuOutlined />
       </Button>
       <Drawer
