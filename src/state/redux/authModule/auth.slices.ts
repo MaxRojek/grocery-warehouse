@@ -1,28 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+const initialState = { };
 
 
-const someSlice = createSlice({
-  name: "someSlice",
-  initialState: {},
+const authSlice = createSlice({
+  name: "authSlice",
+  initialState: initialState,
   reducers: {
-    actionRequested: (state, { payload }) => payload,
-    actionFinished: (state, { payload }) => {
+    actionLoginRequested: (state, { payload }) => payload,
+    actionLoginFinished: (state, { payload }) => {
       console.log("payload someSlice", payload);
       return {
         ...state,
         ...payload
       };
     },
-    actionFailed: (state, { payload }) => payload
+    actionLoginFailed: (state, { payload }) => payload
   }
 });
 
 export const {
-  actionRequested,
-  actionFinished,
-  actionFailed
-} = someSlice.actions;
-const someReducer = someSlice.reducer;
-export default someReducer;
+  actionLoginRequested,
+  actionLoginFinished,
+  actionLoginFailed
+} = authSlice.actions;
+const authReducer = authSlice.reducer;
+export default authReducer;

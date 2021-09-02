@@ -2,14 +2,15 @@ import {
   combineReducers,
   configureStore,
 } from "@reduxjs/toolkit";
-import someSlice from "./authModule/auth.slices";
+import authSlice from "./authModule/auth.slices";
 import notificationSlice from "./notificationModule/notification.slices";
 import createSaga from "redux-saga";
 import { rootSaga } from "./root-sagas";
+import { saveState } from "../services/localStorage";
 
 
 const rootReducer = combineReducers({
-  someSlice,
+  authSlice,
   notificationSlice
 });
 
@@ -22,5 +23,11 @@ const store = configureStore({
 });
 
 sagaMiddleware.run(rootSaga);
+
+// store.subscribe(() => {
+//   saveState({
+//     auth: store.getState().auth
+//   });
+// });
 
 export default store;

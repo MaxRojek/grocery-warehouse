@@ -1,5 +1,5 @@
 import { all, put, takeEvery, delay, call, takeLatest } from "redux-saga/effects";
-import { actionRequested, actionFinished, actionFailed } from "./auth.slices";
+import { actionLoginRequested, actionLoginFinished, actionLoginFailed } from "./auth.slices";
 import { loginAction } from "./auth.actions";
 import { login } from './auth.apiService'
 //import { TuserDataFromFrom, TupdUserData } from "../typings/typings";
