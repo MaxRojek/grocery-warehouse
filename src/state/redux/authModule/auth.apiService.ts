@@ -12,7 +12,6 @@ export const login = (): Promise<string> => {
     endpoint: LOGIN_URL,
     requiresToken: false
   }
-
   // just return httpClient.get (which is a promise) or again use async/await if you prefer
   return httpClient.get<string>(getParameters)
 };
